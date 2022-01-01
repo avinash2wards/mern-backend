@@ -1,0 +1,45 @@
+
+@baseUrl = http://localhost:3002
+@taken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNlZDFiY2FmZDYwZWMyZTdkYzIwYzEiLCJpYXQiOjE2NDA5NDQ5MDR9.8jehYCf7aJtTKMp0h__iOvFskFQWwgd5-b1pZeSqHu0
+
+### Signup a user
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "name": "raj",
+  "password": "raj",
+  "email": "r@r"
+}
+
+### Signin a user
+POST {{baseUrl}}/auth/signin
+Content-Type: application/json
+
+{
+  "email": "r@r",
+  "password": "raj"
+}
+
+### Signout a user
+GET {{baseUrl}}/auth/signout
+
+### Get a user
+GET  {{baseUrl}}/api/users/61ced035afd60ec2e7dc20ba
+Authorization: Bearer {{taken}}
+
+### Update a user
+PUT {{baseUrl}}/api/users/61ced1bcafd60ec2e7dc20c1
+Content-Type: application/json
+Authorization: Bearer {{taken}}
+
+{
+  "name": "raj"
+}
+
+### List all users
+GET  {{baseUrl}}/api/users
+
+### Delete a user
+DELETE  {{baseUrl}}/api/users/61ced1bcafd60ec2e7dc20c1
+Authorization: Bearer {{taken}}
