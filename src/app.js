@@ -12,7 +12,6 @@ app = express();
 app.use(cors());
 app.use(express.json()); // converts the POST body to JSON object and attach to req.body
 
-//For avoidong Heroku $PORT error
 app.get("/", (req, res) => res.end("I'm up!!"));
 app.use("/", usersRouter);
 app.use("/", authRouter);
