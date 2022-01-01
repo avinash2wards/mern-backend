@@ -27,10 +27,8 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(process.env.MERN_BACKEND_PORT || 3002, () => {
-  console.log(
-    `Application runnign at ${process.env.MERN_BACKEND_PORT || 3002}...!!`
-  );
+app.listen(process.env.PORT || 3002, () => {
+  console.log(`Application runnign at ${process.env.PORT || 3002}...!!`);
 });
 
 // Establish a connection to MongoDB using Mongoose (Object Document Mapper - ODM)
