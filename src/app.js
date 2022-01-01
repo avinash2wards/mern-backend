@@ -12,6 +12,7 @@ app = express();
 app.use(cors());
 app.use(express.json()); // converts the POST body to JSON object and attach to req.body
 
+app.use("/", (req, res) => res.end("I'm up!!✌️✌️✌️✌️🎉"));
 app.use("/", usersRouter);
 app.use("/", authRouter);
 
